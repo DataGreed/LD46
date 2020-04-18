@@ -50,8 +50,11 @@ namespace MyNamespace
             AdvanceTimers();
 
             //input processing
-            moveDirection.x = Input.GetAxis("Horizontal");
-            moveDirection.y = Input.GetAxis("Vertical");
+            // moveDirection.x = Input.GetAxis("Horizontal");
+            // moveDirection.y = Input.GetAxis("Vertical");
+            
+            moveDirection.x = Input.GetAxisRaw("Horizontal");
+            moveDirection.y = Input.GetAxisRaw("Vertical");
 
             //TODO: normalize?
 
@@ -150,7 +153,7 @@ namespace MyNamespace
             
             //add explosive force to evasion
             // rb.AddForce(moveDirection.normalized * evasionSpeed, ForceMode2D.Impulse);
-            
+            print(moveDirection.normalized);
             rb.velocity = moveDirection.normalized * evasionSpeed;
         }
 
