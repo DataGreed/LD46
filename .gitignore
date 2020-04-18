@@ -58,3 +58,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+LDJam46/Library/
+LDJam46//[Ll]ibrary/
+LDJam46//[Tt]emp/
+LDJam46//[Oo]bj/
+LDJam46//[Bb]uild/
+LDJam46//[Bb]uilds/
+LDJam46//[Ll]ogs/
+LDJam46//[Mm]emoryCaptures/
+LDJam46/.vs/
