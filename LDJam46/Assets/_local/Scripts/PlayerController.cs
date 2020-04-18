@@ -41,6 +41,7 @@ namespace MyNamespace
             torchLight.SetActive(false);
 
             state = PlayerState.Idle;
+            speed = walkingSpeed;
         }
 
         private void Update()
@@ -98,6 +99,8 @@ namespace MyNamespace
         {
             if (state != PlayerState.Evading)
             {
+                
+                
                 // update speed based on movement input
                 if (changeVelocity)
                 {

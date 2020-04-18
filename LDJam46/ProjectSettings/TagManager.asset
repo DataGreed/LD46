@@ -44,12 +44,21 @@ TagManager:
   - name: Floor
     uniqueID: 3705346777
     locked: 0
+  - name: Footprints
+    uniqueID: 3012476881
+    locked: 0
   - name: Floor Decoration
     uniqueID: 1516300707
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3798527283
     locked: 0
   - name: Enemies
     uniqueID: 35188291
     locked: 0
   - name: Player
     uniqueID: 1321309107
+    locked: 0
+  - name: Overhead
+    uniqueID: 2577481023
     locked: 0
