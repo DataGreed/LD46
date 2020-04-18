@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
         moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.y = Input.GetAxis("Vertical");
         
+        //TODO: normalize?
+        
         //fire if the fire button is pressed
         if(Input.GetButtonDown("Fire1"))
         {
