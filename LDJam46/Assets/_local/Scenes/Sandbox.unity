@@ -1359,6 +1359,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &467986646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7573096556116866397, guid: bf579d8557a644aa8842c7c6a6c8c222,
+    type: 3}
+  m_PrefabInstance: {fileID: 4117964662952809982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &467986649
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467986646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fbdd222f6cae44afbf4fde642eae568, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,8 +8319,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360270866286623615, guid: bf579d8557a644aa8842c7c6a6c8c222,
         type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 1
+      propertyPath: m_FalloffIntensity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf579d8557a644aa8842c7c6a6c8c222, type: 3}
@@ -8315,6 +8340,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050616496845504228, guid: 88c9f707d15bd4d8fac43c95f7754992,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887619796296425144, guid: 88c9f707d15bd4d8fac43c95f7754992,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4428001976802475522, guid: 88c9f707d15bd4d8fac43c95f7754992,
         type: 3}
