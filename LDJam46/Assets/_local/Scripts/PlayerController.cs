@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 1.0f;
+    public bool changeVelocity;
+    
     private Rigidbody2D rb;
 
     private Vector2 moveDirection;
-    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -39,7 +41,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // update speed based on movement input
-        rb.velocity = moveDirection * speed;
+        if (changeVelocity)
+        {
+            rb.velocity = moveDirection * speed;
+        }
+        else
+        {
+            rb.MovePosition(rb.position + moveDirection * speed  * Time.fixedDeltaTime);
+        }
 
         
         //enable/disable running animation
