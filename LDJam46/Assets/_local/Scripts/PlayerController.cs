@@ -24,6 +24,7 @@ namespace MyNamespace
 
         [Header("Links to scene objects")] public GameObject ambientLight;
         public GameObject torchLight;
+        public Animator characterAnimator;
 
         private Rigidbody2D rb;
 
@@ -69,10 +70,15 @@ namespace MyNamespace
             //fire if the fire button is pressed
             if (Input.GetButtonDown("Fire2"))
             {
-                if (timeBeforeEvasion <= 0)
+                if (moveDirection != Vector2.zero)
                 {
-                    Evade();
-                    timeBeforeEvasion = evasionTimeOut;
+                    //evasion needs direction
+
+                    if (timeBeforeEvasion <= 0)
+                    {
+                        Evade();
+                        timeBeforeEvasion = evasionTimeOut;
+                    }
                 }
             }
 
@@ -117,11 +123,11 @@ namespace MyNamespace
                 if (System.Math.Abs(moveDirection.x) > Mathf.Epsilon ||
                     System.Math.Abs(moveDirection.y) > Mathf.Epsilon)
                 {
-
+                    characterAnimator.SetBool("moving", true);
                 }
                 else
                 {
-
+                    characterAnimator.SetBool("moving", false);
                 }
             }
         }
@@ -129,12 +135,23 @@ namespace MyNamespace
         void Attack()
         {
             print("Player attacks");
+            characterAnimator.SetTrigger("attack");
         }
 
         private void Evade()
         {
+            state = PlayerState.Evading;
             print("Player evades");
-            speed = evasionSpeed;
+            // speed = evasionSpeed;
+            characterAnimator.SetTrigger("evade");
+            
+            //stop from walking
+            rb.velocity = Vector2.zero;
+            
+            //add explosive force to evasion
+            // rb.AddForce(moveDirection.normalized * evasionSpeed, ForceMode2D.Impulse);
+            
+            rb.velocity = moveDirection.normalized * evasionSpeed;
         }
 
         /*
@@ -144,6 +161,7 @@ namespace MyNamespace
         {
             state = PlayerState.Idle;
             speed = walkingSpeed;
+            print("Evade Ended; speed reset");
         }
 
         private void LightTorch()

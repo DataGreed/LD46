@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1281980453105441499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150481477821575161}
+  - component: {fileID: 7565833239234184006}
+  m_Layer: 0
+  m_Name: HitBox
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150481477821575161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281980453105441499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3112884292464126816}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &7565833239234184006
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281980453105441499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 18.316833, y: 18.909262}
+  m_Direction: 0
 --- !u!1 &3050616496845504228
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +192,7 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
+  m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0.3
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
@@ -395,7 +442,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.20801286, y: 0.08094996}
-  m_Size: {x: 18.768423, y: 19.086908}
+  m_Size: {x: 20.242022, y: 20.308758}
   m_Direction: 0
 --- !u!50 &2323816690818415261
 Rigidbody2D:
@@ -431,12 +478,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 3
-  evasionSpeed: 4
+  evasionSpeed: 8
   changeVelocity: 1
-  evasionTimeOut: 0.5
+  evasionTimeOut: 0.6
   attackTimeOut: 0.3
   ambientLight: {fileID: 3887619796296425144}
   torchLight: {fileID: 3050616496845504228}
+  characterAnimator: {fileID: 4665887539079426410}
 --- !u!114 &3882160569064415297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3112884292464126816}
   - component: {fileID: 4665887539079426410}
+  - component: {fileID: 7527075032204687818}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -578,6 +627,7 @@ Transform:
   m_Children:
   - {fileID: 1147810369050384897}
   - {fileID: 670222097647629713}
+  - {fileID: 150481477821575161}
   m_Father: {fileID: 6184502496500248644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -600,3 +650,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7527075032204687818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778806655129020516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322feea804bd4719b3c029b1e44f6659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEvadeEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5915251080677306370}
+        m_MethodName: OnEvasionEnded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
