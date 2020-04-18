@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 6184502496500248644}
   - component: {fileID: 2323816690818415261}
   - component: {fileID: 5915251080677306370}
+  - component: {fileID: 3882160569064415297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -295,6 +296,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &3882160569064415297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184502496500248646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3e3fa05db84156aba5553618b81793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  defaultRevivalHealth: 3
+  maxHealth: 3
+  invincibleAfterHurtTime: 0.2
+  invincibleAfterRevivedTime: 0.2
+  invincible: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
+  _animatorDeadBool: isDead
+  setInactiveOnDeath: 1
+  hitAnimationPrefab: {fileID: 0}
+  bloodDecalPrefab: {fileID: 0}
+  revivalAnimationPrefab: {fileID: 0}
 --- !u!1 &8778806655129020516
 GameObject:
   m_ObjectHideFlags: 0
