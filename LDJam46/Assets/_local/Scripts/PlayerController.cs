@@ -13,9 +13,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection;
 
+    [Header("Links to scene objects")]
+    public GameObject ambientLight;
+    public GameObject torchLight;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
+        
+        //from the start the torch is not lit
+        ambientLight.SetActive(true);
+        torchLight.SetActive(false);
     }
 
     private void Update()
@@ -37,6 +45,11 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Fire2"))
         {
             Evade();
+        }
+        
+        if(Input.GetButtonDown("Fire3"))
+        {
+            LightTorch();
         }
     }
 
@@ -74,4 +87,19 @@ public class PlayerController : MonoBehaviour
     {
         print("Player evades");
     }
+    
+    private void LightTorch()
+    {
+        print("Trying to light torch");
+        ambientLight.SetActive(false);
+        torchLight.SetActive(true);
+    }
+
+    private void ExtinguishTorch()
+    {
+        print("Extinguishing torch");
+        ambientLight.SetActive(true);
+        torchLight.SetActive(false);
+    }
+    
 }

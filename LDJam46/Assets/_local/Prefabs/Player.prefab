@@ -297,6 +297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   changeVelocity: 0
+  ambientLight: {fileID: 3887619796296425144}
+  torchLight: {fileID: 3050616496845504228}
 --- !u!114 &3882160569064415297
 MonoBehaviour:
   m_ObjectHideFlags: 0
