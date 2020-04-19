@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4117964664496681969}
   - component: {fileID: 4117964664496681968}
   - component: {fileID: 8380096712681304841}
+  - component: {fileID: 8426188798493667426}
   m_Layer: 0
   m_Name: CampFire
   m_TagString: CampFire
@@ -101,6 +102,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.9567425
+--- !u!114 &8426188798493667426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117964664496681971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0889f202b24991a55b15a69c5296b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSecondsToBurn: 90
+  onBurnedDown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5753644863120656204
 GameObject:
   m_ObjectHideFlags: 0

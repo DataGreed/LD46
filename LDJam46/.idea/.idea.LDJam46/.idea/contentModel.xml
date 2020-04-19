@@ -9,6 +9,7 @@
         <e p="_local" t="Include">
           <e p="Scripts" t="Include">
             <e p="AnimationEventRaiser.cs" t="Include" />
+            <e p="BonFireController.cs" t="Include" />
             <e p="FollowCamera.cs" t="Include" />
             <e p="HUDController.cs" t="Include" />
             <e p="LivingBeing.cs" t="Include" />

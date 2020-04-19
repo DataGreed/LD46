@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
-namespace DrunkShotgun
+namespace firewalk
 {
     public class LivingBeing : MonoBehaviour
     {
