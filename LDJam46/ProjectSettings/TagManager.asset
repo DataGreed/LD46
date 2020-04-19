@@ -10,7 +10,7 @@ TagManager:
   - CampFire
   - PlayerHitBox
   - Enemy
-  - EnemyHitbox
+  - EnemyHitBox
   layers:
   - Default
   - TransparentFX
@@ -20,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

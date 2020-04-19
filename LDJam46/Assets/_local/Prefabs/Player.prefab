@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150481477821575161}
   - component: {fileID: 7565833239234184006}
+  - component: {fileID: 1788930732648595834}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: PlayerHitBox
@@ -41,12 +42,25 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 18.316833, y: 18.909262}
   m_Direction: 0
+--- !u!114 &1788930732648595834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281980453105441499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5ad6b9c299474995c5a12aa7b2e756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livingBeing: {fileID: 3882160569064415297}
 --- !u!1 &3050616496845504228
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +350,7 @@ GameObject:
   - component: {fileID: 670222097647629713}
   - component: {fileID: 5707717428636969251}
   - component: {fileID: 8759907946379522469}
+  - component: {fileID: 3089623646338479436}
   m_Layer: 0
   m_Name: Attack Shape
   m_TagString: PlayerAttack
@@ -417,12 +432,26 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.1885085
+--- !u!114 &3089623646338479436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484324879298433661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fca82289544a5b8ac361b63c8a4c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDamage: EnemyHitBox
+  damagePerHit: 1
 --- !u!1 &6184502496500248646
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +466,7 @@ GameObject:
   - component: {fileID: 5915251080677306370}
   - component: {fileID: 3882160569064415297}
   - component: {fileID: 4573330606662382538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -13,10 +13,12 @@
             <e p="DIsmissUI.cs" t="Include" />
             <e p="Fading2DLight.cs" t="Include" />
             <e p="FollowCamera.cs" t="Include" />
+            <e p="HitBox.cs" t="Include" />
             <e p="HUDController.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="LevelController.cs" t="Include" />
             <e p="LivingBeing.cs" t="Include" />
+            <e p="MeleeAttack.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="SunriseController.cs" t="Include" />
