@@ -157,6 +157,7 @@ MonoBehaviour:
   defaultIntensity: 1
   fadeOutIntensity: 0.7
   disableOnFadedOut: 1
+  deactivateGameObjectOnFadeOut: 0
   OnFadedOut:
     m_PersistentCalls:
       m_Calls:
@@ -337,7 +338,7 @@ GameObject:
   - component: {fileID: 8759907946379522469}
   m_Layer: 0
   m_Name: Attack Shape
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

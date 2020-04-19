@@ -9,6 +9,8 @@ TagManager:
   - Item
   - CampFire
   - PlayerHitBox
+  - Enemy
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX
