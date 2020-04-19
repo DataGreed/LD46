@@ -9,12 +9,16 @@ namespace _local.Scripts
         public float maxSecondsToBurn=60f;
         public UnityEvent onBurnedDown = new UnityEvent();
         private bool burnedDown=false;
+        public Fading2DLight fadingLight;
         
         public float secondsLeftToBurn { get; private set; }
 
         private void Awake()
         {
             secondsLeftToBurn = maxSecondsToBurn;
+            fadingLight = GetComponent<Fading2DLight>();
+            fadingLight.secondsToFadeOut = secondsLeftToBurn;
+            fadingLight.Reignite();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -37,7 +41,6 @@ namespace _local.Scripts
                 }
             }
         }
-
         public void Feed(int seconds)
         {
             secondsLeftToBurn += seconds;
@@ -45,6 +48,9 @@ namespace _local.Scripts
             {
                 secondsLeftToBurn = maxSecondsToBurn;
             }
+            
+            fadingLight.secondsToFadeOut = secondsLeftToBurn;
+            fadingLight.Reignite();
             
             print($"Fed the fire. {secondsLeftToBurn} seconds left");
         }

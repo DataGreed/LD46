@@ -12,6 +12,7 @@ namespace _local.Scripts
         public float defaultIntensity = 1;
         public float fadeOutIntensity = 0.3f;
         public bool disableOnFadedOut = true;
+        public bool deactivateGameObjectOnFadeOut = false;
         public UnityEvent OnFadedOut = new UnityEvent();
         private bool fadedOut = false;
         
@@ -45,8 +46,13 @@ namespace _local.Scripts
                     {
                         light.enabled = false;
                     }
-                    
+
                     OnFadedOut?.Invoke();
+                    
+                    if (deactivateGameObjectOnFadeOut)
+                    {
+                        gameObject.SetActive(false);
+                    }
                 }
                 
             }
