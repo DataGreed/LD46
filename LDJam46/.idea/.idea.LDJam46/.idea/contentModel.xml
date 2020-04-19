@@ -12,6 +12,7 @@
             <e p="BonFireController.cs" t="Include" />
             <e p="FollowCamera.cs" t="Include" />
             <e p="HUDController.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
             <e p="LivingBeing.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="TargetFramerate.cs" t="Include" />

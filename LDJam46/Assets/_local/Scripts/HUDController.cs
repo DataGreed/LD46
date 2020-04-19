@@ -55,6 +55,8 @@ namespace _local.Scripts
                     var heart = Instantiate(heartPrefab);
                     heart.transform.SetParent(heartsContainer.transform);
                 }
+                
+                print("HUD: health redrawn");
             }
         }
     }
