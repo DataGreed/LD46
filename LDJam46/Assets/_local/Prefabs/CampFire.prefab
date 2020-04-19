@@ -183,7 +183,7 @@ MonoBehaviour:
   secondsToFadeOut: 30
   defaultIntensity: 1
   fadeOutIntensity: 0.6
-  disableOnFadedOut: 0
+  disableOnFadedOut: 1
   deactivateGameObjectOnFadeOut: 0
   OnFadedOut:
     m_PersistentCalls:

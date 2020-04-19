@@ -12,11 +12,13 @@ namespace _local.Scripts
         public LivingBeing playerLivingBeing;
         public BonFireController bonFireController;
         public Inventory inventory;
+        public SunriseController sunriseController;
 
         [Header("Links to HUD scene objects")] 
         public GameObject heartsContainer;
         public GameObject itemsContainer;
         public Image bonfireTimer;
+        public Image sunriseTimer;
 
         [Header("Links to HUD scene prefabs")] 
         public GameObject heartPrefab;
@@ -42,6 +44,8 @@ namespace _local.Scripts
         {
             //TODO: add smooth animation
             bonfireTimer.fillAmount = bonFireController.secondsLeftToBurn / bonFireController.maxSecondsToBurn;
+            
+            sunriseTimer.fillAmount = 1-sunriseController.secondsTillSunrise / sunriseController.maxSecondsTillSunrise;
 
             if (playerLivingBeing.health != previousHealth)
             {
@@ -54,8 +58,7 @@ namespace _local.Scripts
 
                 for (int i = 0; i < playerLivingBeing.health; i++)
                 {
-                    var heart = Instantiate(heartPrefab);
-                    heart.transform.SetParent(heartsContainer.transform);
+                    var heart = Instantiate(heartPrefab, heartsContainer.transform, true);
                 }
                 
                 print("HUD: health redrawn");
@@ -72,8 +75,7 @@ namespace _local.Scripts
 
                 for (int i = 0; i < inventory.woodCarrying; i++)
                 {
-                    var heart = Instantiate(woodPrefab);
-                    heart.transform.SetParent(itemsContainer.transform);
+                    var heart = Instantiate(woodPrefab, itemsContainer.transform, true);
                 }
                 
                 print("HUD: items redrawn");
