@@ -138,7 +138,11 @@ namespace MyNamespace
                 if(moveDirection!=Vector2.zero)
                 {
                     characterAnimator.SetBool("moving", true);
-                    
+
+                    var main = footPrintsEmitter.main;
+                    var angle = Mathf.PI/2 + Mathf.Atan2(-moveDirection.normalized.y, moveDirection.normalized.x);// * Mathf.Rad2Deg;
+                    main.startRotation = angle;    //this has to be set in radians apparantly
+
                     footPrintsEmitter.enableEmission = true;
                     
                 }
