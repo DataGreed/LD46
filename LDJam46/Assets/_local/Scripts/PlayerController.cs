@@ -27,6 +27,7 @@ namespace MyNamespace
         [Header("Links to scene objects")] public GameObject ambientLight;
         public GameObject torchLight;
         public Animator characterAnimator;
+        public ParticleSystem footPrintsEmitter;
 
         private Rigidbody2D rb;
         private Inventory _inventory;
@@ -47,6 +48,8 @@ namespace MyNamespace
 
             state = PlayerState.Idle;
             speed = walkingSpeed;
+
+            footPrintsEmitter.enableEmission = false;
         }
 
         private void Update()
@@ -130,14 +133,20 @@ namespace MyNamespace
 
                 //enable/disable running animation
                 // we compare to epsilon, not to zero, so we don't get any floating points errors
-                if (System.Math.Abs(moveDirection.x) > Mathf.Epsilon ||
-                    System.Math.Abs(moveDirection.y) > Mathf.Epsilon)
+                // if (System.Math.Abs(moveDirection.x) > Mathf.Epsilon ||
+                //     System.Math.Abs(moveDirection.y) > Mathf.Epsilon)
+                if(moveDirection!=Vector2.zero)
                 {
                     characterAnimator.SetBool("moving", true);
+                    
+                    footPrintsEmitter.enableEmission = true;
+                    
                 }
                 else
                 {
                     characterAnimator.SetBool("moving", false);
+                    footPrintsEmitter.enableEmission = false;
+
                 }
             }
         }
@@ -162,6 +171,7 @@ namespace MyNamespace
             // rb.AddForce(moveDirection.normalized * evasionSpeed, ForceMode2D.Impulse);
             print(moveDirection.normalized);
             rb.velocity = moveDirection.normalized * evasionSpeed;
+            footPrintsEmitter.enableEmission = false;
         }
 
         /*
