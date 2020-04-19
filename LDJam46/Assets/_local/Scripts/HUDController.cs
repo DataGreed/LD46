@@ -16,6 +16,10 @@ namespace _local.Scripts
         public GameObject heartsContainer;
         public GameObject itemsContainer;
         public Image bonfireTimer;
+
+        [Header("Links to HUD scene prefabs")] 
+        public GameObject heart;
+        public GameObject wood;
         
         private void Start()
         {
@@ -32,6 +36,7 @@ namespace _local.Scripts
 
         void Redraw()
         {
+            //TODO: add smooth animation
             bonfireTimer.fillAmount = bonFireController.secondsLeftToBurn / bonFireController.maxSecondsToBurn;
         }
     }
