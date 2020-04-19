@@ -1114,6 +1114,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3e3fa05db84156aba5553618b81793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &285543966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4573330606662382538, guid: 88c9f707d15bd4d8fac43c95f7754992,
+    type: 3}
+  m_PrefabInstance: {fileID: 6184502496019368635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00336e619d4c46b5bfc4469fbfe9a24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &309905186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,12 +1243,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLivingBeing: {fileID: 285543964}
   bonFireController: {fileID: 1678157329}
+  inventory: {fileID: 285543966}
   heartsContainer: {fileID: 568736467}
   itemsContainer: {fileID: 2113523178}
   bonfireTimer: {fileID: 434472434}
   heartPrefab: {fileID: 644331774055425591, guid: 90f7657cbb3b34d76a2883e45f822bd6,
     type: 3}
-  woodPrefab: {fileID: 0}
+  woodPrefab: {fileID: 644331774055425591, guid: d383de1cd33634aeeb4fb9444e08a04d,
+    type: 3}
 --- !u!1001 &356879911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9458,7 +9472,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: -28.5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

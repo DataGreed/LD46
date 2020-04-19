@@ -11,6 +11,7 @@ namespace _local.Scripts
         [Header("Links to scene objects")]
         public LivingBeing playerLivingBeing;
         public BonFireController bonFireController;
+        public Inventory inventory;
 
         [Header("Links to HUD scene objects")] 
         public GameObject heartsContainer;
@@ -22,6 +23,7 @@ namespace _local.Scripts
         public GameObject woodPrefab;
 
         private int previousHealth;
+        private int previousWood;
         
         private void Start()
         {
@@ -57,6 +59,24 @@ namespace _local.Scripts
                 }
                 
                 print("HUD: health redrawn");
+            }
+            
+            if (inventory.woodCarrying != previousWood)
+            {
+                previousWood = inventory.woodCarrying;
+                
+                foreach(Transform child in itemsContainer.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                for (int i = 0; i < inventory.woodCarrying; i++)
+                {
+                    var heart = Instantiate(woodPrefab);
+                    heart.transform.SetParent(itemsContainer.transform);
+                }
+                
+                print("HUD: items redrawn");
             }
         }
     }
