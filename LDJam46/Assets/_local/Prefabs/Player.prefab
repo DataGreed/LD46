@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 3109814051348096376}
   - component: {fileID: 4428001976802475522}
   - component: {fileID: 6928870536228319846}
+  - component: {fileID: 1166998305494389307}
   m_Layer: 0
   m_Name: Torch Light
   m_TagString: Untagged
@@ -93,8 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FalloffIntensity: 0.7
+  m_Color: {r: 0.990566, g: 0.9896397, b: 0.9111338, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000d91adbdcd1bf8eb3a3e9605a33ed68e243ee1802b393c14e3f3da199
@@ -139,6 +140,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1166998305494389307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3050616496845504228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446afe0a2d4f4dae9fc5470dd410ebed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 0}
+  secondsToFadeOut: 45
+  defaultIntensity: 1
+  fadeOutIntensity: 0.7
+  disableOnFadedOut: 1
+  OnFadedOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3887619796296425144}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3887619796296425144
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +520,8 @@ MonoBehaviour:
   ambientLight: {fileID: 3887619796296425144}
   torchLight: {fileID: 3050616496845504228}
   characterAnimator: {fileID: 4665887539079426410}
-  footPrintsEmitter: {fileID: 0}
+  footPrintsEmitter: {fileID: 2602077001884769175}
+  torch: {fileID: 1166998305494389307}
 --- !u!114 &3882160569064415297
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,10 +24,12 @@ namespace MyNamespace
         
         public PlayerState state { get; private set; }
 
-        [Header("Links to scene objects")] public GameObject ambientLight;
+        [Header("Links to scene objects")] 
+        public GameObject ambientLight;
         public GameObject torchLight;
         public Animator characterAnimator;
         public ParticleSystem footPrintsEmitter;
+        public Fading2DLight torch;
 
         private Rigidbody2D rb;
         private Inventory _inventory;
@@ -198,6 +200,7 @@ namespace MyNamespace
                 _inventory.BurnOneWood();
                 ambientLight.SetActive(false);
                 torchLight.SetActive(true);
+                torch.Reignite();
                 print("Made a torch");
             }
             else

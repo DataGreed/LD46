@@ -319,7 +319,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: d91adbdc00000000d1bf8eb3a3e9605a33ed68e243ee1802b393c14e3f3da199
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
-  m_LightOrder: 0
+  m_LightOrder: 20
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0.3
   m_ShadowVolumeIntensity: 0
