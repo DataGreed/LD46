@@ -18,8 +18,10 @@ namespace _local.Scripts
         public Image bonfireTimer;
 
         [Header("Links to HUD scene prefabs")] 
-        public GameObject heart;
-        public GameObject wood;
+        public GameObject heartPrefab;
+        public GameObject woodPrefab;
+
+        private int previousHealth;
         
         private void Start()
         {
@@ -38,6 +40,22 @@ namespace _local.Scripts
         {
             //TODO: add smooth animation
             bonfireTimer.fillAmount = bonFireController.secondsLeftToBurn / bonFireController.maxSecondsToBurn;
+
+            if (playerLivingBeing.health != previousHealth)
+            {
+                previousHealth = playerLivingBeing.health;
+                
+                foreach(Transform child in heartsContainer.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                for (int i = 0; i < playerLivingBeing.health; i++)
+                {
+                    var heart = Instantiate(heartPrefab);
+                    heart.transform.SetParent(heartsContainer.transform);
+                }
+            }
         }
     }
 }
