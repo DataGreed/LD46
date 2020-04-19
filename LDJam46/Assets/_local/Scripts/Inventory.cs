@@ -49,5 +49,13 @@ namespace _local.Scripts
 
             return secondsToFeed;
         }
+
+        public void BurnOneWood()
+        {
+            if (woodCarrying > 0)
+            {
+                woodCarrying--;
+            }
+        }
     }
 }

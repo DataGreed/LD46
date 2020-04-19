@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _local.Scripts;
 using UnityEngine;
 
 namespace MyNamespace
@@ -18,7 +19,8 @@ namespace MyNamespace
         public bool changeVelocity;
         public float evasionTimeOut = 0.5f;
         public float attackTimeOut = 0.3f;
-        
+
+        public float torchMaxBurnSeconds = 40;
         
         public PlayerState state { get; private set; }
 
@@ -27,6 +29,7 @@ namespace MyNamespace
         public Animator characterAnimator;
 
         private Rigidbody2D rb;
+        private Inventory _inventory;
 
         private Vector2 moveDirection;
         private float timeBeforeEvasion;
@@ -36,6 +39,7 @@ namespace MyNamespace
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            _inventory = GetComponent<Inventory>();
 
             //from the start the torch is not lit
             ambientLight.SetActive(true);
@@ -102,6 +106,9 @@ namespace MyNamespace
             {
                 timeBeforeAttack -= Time.deltaTime;
             }
+            
+            //TODO: burn the torch
+            //TODO: torch burndown animation
         }
 
         void FixedUpdate()
@@ -169,9 +176,20 @@ namespace MyNamespace
 
         private void LightTorch()
         {
-            print("Trying to light torch");
-            ambientLight.SetActive(false);
-            torchLight.SetActive(true);
+            // print("Trying to light torch");
+            if (_inventory.woodCarrying > 0)
+            {
+                //TODO: check if torch not burning
+                
+                _inventory.BurnOneWood();
+                ambientLight.SetActive(false);
+                torchLight.SetActive(true);
+                print("Made a torch");
+            }
+            else
+            {
+                print("Not enough wood to make a torch");
+            }
         }
 
         private void ExtinguishTorch()
