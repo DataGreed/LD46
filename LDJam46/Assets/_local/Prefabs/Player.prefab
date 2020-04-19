@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7565833239234184006}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Player
+  m_TagString: PlayerHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 2323816690818415261}
   - component: {fileID: 5915251080677306370}
   - component: {fileID: 3882160569064415297}
+  - component: {fileID: 4573330606662382538}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -515,6 +516,20 @@ MonoBehaviour:
   hitAnimationPrefab: {fileID: 0}
   bloodDecalPrefab: {fileID: 0}
   revivalAnimationPrefab: {fileID: 0}
+--- !u!114 &4573330606662382538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184502496500248646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00336e619d4c46b5bfc4469fbfe9a24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCapacity: 3
+  secondsPerWood: 30
 --- !u!1 &8416323005745931739
 GameObject:
   m_ObjectHideFlags: 0

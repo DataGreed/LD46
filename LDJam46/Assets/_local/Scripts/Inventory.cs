@@ -10,7 +10,7 @@ namespace _local.Scripts
         public int secondsPerWood = 30; 
         public int woodCarrying { get; private set; }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Item"))
             {
@@ -25,6 +25,7 @@ namespace _local.Scripts
             {
                 woodCarrying++;
                 Destroy(item);
+                print($"Picked up wood. Current wood: {woodCarrying}");
             }
         }
 

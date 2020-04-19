@@ -17,7 +17,7 @@ namespace _local.Scripts
             secondsLeftToBurn = maxSecondsToBurn;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             print($"Bonfire entered trigger with {other}");
             
@@ -25,7 +25,11 @@ namespace _local.Scripts
             
             if(other.CompareTag("Player"))
             {
-                var secondsToAdd = other.gameObject.GetComponent<Inventory>().FeedFire();
+                var inventory = other.GetComponent<Inventory>();
+                
+                Debug.Log(inventory);
+                
+                var secondsToAdd = inventory.FeedFire();
 
                 if (secondsToAdd > 0)
                 {
