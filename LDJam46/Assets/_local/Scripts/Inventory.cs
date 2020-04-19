@@ -55,6 +55,8 @@ namespace _local.Scripts
             if (woodCarrying > 0)
             {
                 woodCarrying--;
+                
+                print($"Current wood: {woodCarrying}");
             }
         }
     }
