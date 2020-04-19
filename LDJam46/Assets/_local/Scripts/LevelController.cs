@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace _local.Scripts
@@ -12,6 +13,17 @@ namespace _local.Scripts
         
         public bool won { get; private set; }
         public bool lost { get; private set; }
+        
+        public UnityEvent OnLevelStart;
+        public UnityEvent OnLevelWon;
+        public UnityEvent OnLevelLostFire;
+        public UnityEvent OnLevelLostDead;
+        public UnityEvent OnLevelLost;
+
+        private void Start()
+        {
+            OnLevelStart?.Invoke();
+        }
 
         public void Update()
         {
@@ -38,6 +50,8 @@ namespace _local.Scripts
             {
                 lost = true;
                 print("Game Over - you're dead");
+                OnLevelLostDead?.Invoke();
+                GameOver();
             }
         }
         
@@ -47,7 +61,14 @@ namespace _local.Scripts
             {
                 lost = true;
                 print("Game Over - bonfire went out");
+                OnLevelLostFire?.Invoke();
+                GameOver();
             }
+        }
+
+        public void GameOver()
+        {
+            OnLevelLost?.Invoke();
         }
 
         public void RestartLevel()
@@ -56,12 +77,19 @@ namespace _local.Scripts
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
+        public void GoToTitle()
+        {
+            print("Going to title");
+            SceneManager.LoadScene("Title");
+        }
+        
         public void Victory()
         {
             if (!won)
             {
                 won = true;
                 print("Game Over");
+                OnLevelWon?.Invoke();
             }
         }
     }
