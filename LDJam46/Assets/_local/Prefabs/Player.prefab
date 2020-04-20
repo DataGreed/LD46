@@ -576,9 +576,9 @@ MonoBehaviour:
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
-  animator: {fileID: 0}
+  animator: {fileID: 4665887539079426410}
   _animatorDeadBool: isDead
-  setInactiveOnDeath: 1
+  setInactiveOnDeath: 0
   hitAnimationPrefab: {fileID: 0}
   bloodDecalPrefab: {fileID: 0}
   revivalAnimationPrefab: {fileID: 0}
