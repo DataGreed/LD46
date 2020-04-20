@@ -197,8 +197,8 @@ namespace firewalk
             int xSign = Random.value > 0.5 ? 1 : -1;
             int ySign = Random.value > 0.5 ? 1 : -1;
             
-            lastPatrolPoint = new Vector2(xSign * spawnPoint.x + Random.Range(minPatrolDistance, maxPatrolDistance),
-                ySign*spawnPoint.y + Random.Range(minPatrolDistance, maxPatrolDistance));
+            lastPatrolPoint = new Vector2(spawnPoint.x + xSign * Random.Range(minPatrolDistance, maxPatrolDistance),
+                spawnPoint.y + ySign*Random.Range(minPatrolDistance, maxPatrolDistance));
             
         }
         
