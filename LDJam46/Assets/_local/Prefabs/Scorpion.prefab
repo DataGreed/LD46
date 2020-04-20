@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 3277200675277336992}
   - component: {fileID: 2323816690818415261}
   - component: {fileID: 3882160569064415297}
+  - component: {fileID: 1015289062058151992}
   m_Layer: 9
   m_Name: Scorpion
   m_TagString: Enemy
@@ -357,6 +358,26 @@ MonoBehaviour:
   hitAnimationPrefab: {fileID: 0}
   bloodDecalPrefab: {fileID: 0}
   revivalAnimationPrefab: {fileID: 0}
+--- !u!114 &1015289062058151992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184502496500248646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d6bb3c9ddc4fb0b2135c49a89b3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDetectionDistance: 4
+  walkingSpeed: 1
+  attackRange: 1
+  attackTimeOut: 1.5
+  minPatrolDistance: 5
+  maxPatrolDistance: 15
+  patrolPointReachAccuracy: 1
+  characterAnimator: {fileID: 4665887539079426410}
 --- !u!1 &8416323005745931739
 GameObject:
   m_ObjectHideFlags: 0

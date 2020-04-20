@@ -11,6 +11,8 @@ namespace MyNamespace
     public class PlayerController : MonoBehaviour
     {
 
+        public static PlayerController instance;
+        
         private float speed = 1.0f;
         
         public float walkingSpeed = 1.0f;
@@ -38,6 +40,12 @@ namespace MyNamespace
         private float timeBeforeEvasion;
         private float timeBeforeAttack;
 
+
+        private void Awake()
+        {
+            //save instance so enemies can easily refer to it
+            instance = this;
+        }
 
         private void Start()
         {
@@ -214,6 +222,11 @@ namespace MyNamespace
             print("Extinguishing torch");
             ambientLight.SetActive(true);
             torchLight.SetActive(false);
+        }
+
+        public bool torchIsLit
+        {
+            get { return torchLight.activeInHierarchy; }
         }
 
     }
