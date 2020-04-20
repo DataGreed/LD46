@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6912206883665537522}
   - component: {fileID: 3216956975023226967}
+  - component: {fileID: 6774672420456919873}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -81,6 +82,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6774672420456919873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215200016336978064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567c93f0f71485fb3cab786f7366424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteToFlash: {fileID: 3216956975023226967}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  timesToFlash: 1
+  intervalSeconds: 0.2
 --- !u!1 &1281980453105441499
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +678,7 @@ MonoBehaviour:
   startingHealth: 3
   defaultRevivalHealth: 3
   maxHealth: 3
-  invincibleAfterHurtTime: 0.2
+  invincibleAfterHurtTime: 0.3
   invincibleAfterRevivedTime: 0.2
   invincible: 0
   onDeath:
@@ -683,6 +700,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3626746886096339016}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6774672420456919873}
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2290833526197065005}
+        m_MethodName: Flash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5819,6 +5858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5820793227879560618}
   - component: {fileID: 6371214455929828434}
+  - component: {fileID: 2290833526197065005}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -5890,6 +5930,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2290833526197065005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065462021814666086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567c93f0f71485fb3cab786f7366424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteToFlash: {fileID: 6371214455929828434}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  timesToFlash: 1
+  intervalSeconds: 0.2
 --- !u!1 &9107649061906985354
 GameObject:
   m_ObjectHideFlags: 0

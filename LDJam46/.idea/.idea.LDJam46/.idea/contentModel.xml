@@ -13,6 +13,7 @@
             <e p="DIsmissUI.cs" t="Include" />
             <e p="EnemyAI.cs" t="Include" />
             <e p="Fading2DLight.cs" t="Include" />
+            <e p="FlashSprite.cs" t="Include" />
             <e p="FollowCamera.cs" t="Include" />
             <e p="HitBox.cs" t="Include" />
             <e p="HUDController.cs" t="Include" />
