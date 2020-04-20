@@ -33,6 +33,10 @@ namespace MyNamespace
         public ParticleSystem footPrintsEmitter;
         public Fading2DLight torch;
 
+        public SpriteRenderer frontSprite;
+        public SpriteRenderer backSprite;
+        public SpriteRenderer attackSprite;
+        
         private Rigidbody2D rb;
         private Inventory _inventory;
 
@@ -163,6 +167,8 @@ namespace MyNamespace
 
                 }
             }
+            
+            UpdateAnimationDirection();
         }
 
         void Attack()
@@ -237,6 +243,33 @@ namespace MyNamespace
         public void StopMovement()
         {
             rb.velocity=Vector2.zero;
+        }
+
+        public void UpdateAnimationDirection()
+        {
+            if (moveDirection.x>0)
+            {
+                frontSprite.flipX = false;
+                backSprite.flipX = false;
+                attackSprite.flipX = false;
+            }
+            else if (moveDirection.x < 0) //we don;t update it if it's 0 to face the same direction he walked
+            {
+                frontSprite.flipX = true;
+                backSprite.flipX = true;
+                attackSprite.flipX = true;
+            }
+
+            if (moveDirection.y > 0)
+            {
+                frontSprite.enabled = false;
+                backSprite.enabled = true;
+            }
+            else if (moveDirection.y < 0)
+            {
+                frontSprite.enabled = true;
+                backSprite.enabled = false;
+            }
         }
 
     }
