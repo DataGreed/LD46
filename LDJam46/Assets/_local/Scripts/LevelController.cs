@@ -27,7 +27,7 @@ namespace _local.Scripts
 
         public void Update()
         {
-            if (Time.frameCount / 4 == 0)
+            if (Time.frameCount % 4 == 0)
             {
                 if (!won)
                 {
@@ -38,6 +38,8 @@ namespace _local.Scripts
 
         private void CheckVictoryCondition()
         {
+            //print($"left to burn {bonfireController.secondsLeftToBurn} - sunrise in {sunriseController.secondsTillSunrise}");
+            
             if (bonfireController.secondsLeftToBurn > sunriseController.secondsTillSunrise)
             {
                 Victory();
@@ -88,7 +90,7 @@ namespace _local.Scripts
             if (!won)
             {
                 won = true;
-                print("Game Over");
+                print("Victory!");
                 OnLevelWon?.Invoke();
             }
         }
