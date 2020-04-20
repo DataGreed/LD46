@@ -7,10 +7,13 @@ namespace _local.Scripts
     {
         public float destroyInSeconds = 3;
 
-        private float secondsLeft;
+        private float secondsLeft=0;
         public void Start()
         {
-            secondsLeft = destroyInSeconds;
+            if (secondsLeft <= 0)
+            {
+                secondsLeft = destroyInSeconds;
+            }//else user the ones passed with reset timer function
         }
 
         /*

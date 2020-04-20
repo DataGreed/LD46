@@ -11,6 +11,9 @@ namespace _local.Scripts
         private bool burnedDown=false;
         public Fading2DLight fadingLight;
         
+        public float alertAtSeconds=35f;
+        public bool alertRaised = false;
+        
         public float secondsLeftToBurn { get; private set; }
 
         private void Awake()
@@ -53,6 +56,13 @@ namespace _local.Scripts
             fadingLight.Reignite();
             
             print($"Fed the fire. {secondsLeftToBurn} seconds left");
+            HUDController.Alert("Fed the bonfire with all the wood I've found.", 6f);
+
+            if (secondsLeftToBurn > alertAtSeconds)
+            {
+                //reset alert
+                alertRaised = false;
+            }
         }
         
         public void Update()
@@ -68,6 +78,12 @@ namespace _local.Scripts
             else
             {
                 secondsLeftToBurn -= Time.deltaTime;
+
+                if (secondsLeftToBurn <= alertAtSeconds && !alertRaised)
+                {
+                    HUDController.Alert("Campfire will go out soon. I need to feed it with some wood.", 6f);
+                    alertRaised = true;
+                }
             }
         }
     }

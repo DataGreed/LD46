@@ -35,6 +35,17 @@ namespace _local.Scripts
                 woodCarrying++;
                 Destroy(item);
                 print($"Picked up wood. Current wood: {woodCarrying}");
+                HUDController.Alert("Picked up some wood. Can use it to light a torch or feed the campfire.", 
+                    6f);
+
+                if (woodCarrying >= maxCapacity)
+                {
+                    HUDController.Alert("Backpack is full, I have to find my way back to the campfire.", 10f);
+                }
+            }
+            else
+            {
+                HUDController.Alert("Cannot carry any more wood. Have to find my way back to the campfire");
             }
         }
 

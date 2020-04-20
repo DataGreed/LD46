@@ -94,10 +94,17 @@ namespace _local.Scripts
         /*
          * Shows short message alert to the player
          */
-        public static void Alert(string message)
+        public static void Alert(string message, float? alertSeconds=null)
         {
             var alert = Instantiate(instance.alertPrefab, instance.alertsContainer.transform, true);
             alert.GetComponent<Text>().text = message;
+
+            if (alertSeconds != null)
+            {
+                // print("resetting timer");
+                //if seconds passed, set timer
+                alert.GetComponent<SelfDestruct>().ResetTimer((float)alertSeconds);
+            }
         }
     }
 }

@@ -210,6 +210,7 @@ namespace MyNamespace
                 torchLight.SetActive(true);
                 torch.Reignite();
                 print("Made a torch");
+                HUDController.Alert("Used 1 piece of wood to make a torch");
             }
             else
             {
