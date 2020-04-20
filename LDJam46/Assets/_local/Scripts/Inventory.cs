@@ -10,6 +10,8 @@ namespace _local.Scripts
         public int secondsPerWood = 30; 
         public int woodCarrying { get; private set; }
 
+        public AudioSource pickupSourceSound;
+
         public GameObject lastTakenItem;
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -37,6 +39,8 @@ namespace _local.Scripts
                 print($"Picked up wood. Current wood: {woodCarrying}");
                 HUDController.Alert("Picked up some wood. Can use it to light a torch or feed the campfire.", 
                     6f);
+                
+                pickupSourceSound.Play();
 
                 if (woodCarrying >= maxCapacity)
                 {
