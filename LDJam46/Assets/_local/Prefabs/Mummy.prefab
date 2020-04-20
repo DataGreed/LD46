@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 8869022079763869996}
   - component: {fileID: 1881218113403821119}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: ShadowRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,13 +473,90 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: d91adbdc00000000d1bf8eb3a3e9605a33ed68e243ee1802b393c14e3f3da199
   m_ShapePath:
-  - {x: -10.000585, y: -9.609376, z: 0}
-  - {x: 9.472513, y: -9.609376, z: 0}
-  - {x: 9.609128, y: 10.04387, z: 0}
-  - {x: -9.863974, y: 9.937543, z: 0}
-  m_ShapePathHash: -1561500387
+  - {x: -2.8992462, y: 3.4192283, z: 0}
+  - {x: -3.2614577, y: -9.522345, z: 0}
+  - {x: -1.3846613, y: -9.653884, z: 0}
+  - {x: -0.13112797, y: -4.8400083, z: 0}
+  - {x: 0.7228269, y: -9.209648, z: 0}
+  - {x: 2.6475172, y: -9.237144, z: 0}
+  - {x: 2.3648343, y: 4.0820403, z: 0}
+  - {x: 1.8080297, y: 5.6147966, z: 0}
+  - {x: 3.4734573, y: 6.255604, z: 0}
+  - {x: 3.2763455, y: 9.607948, z: 0}
+  - {x: 0.50283694, y: 10.6109295, z: 0}
+  - {x: -2.617071, y: 9.561154, z: 0}
+  - {x: -2.4571052, y: 7.1318655, z: 0}
+  - {x: -1.2242717, y: 4.9113665, z: 0}
+  m_ShapePathHash: -171126198
   m_Mesh: {fileID: 0}
-  m_InstanceId: 117438
+  m_InstanceId: 157540
+--- !u!1 &4761133001908697396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519866115505668874}
+  - component: {fileID: 2670880000976859962}
+  m_Layer: 0
+  m_Name: ShadowLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519866115505668874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761133001908697396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3112884292464126816}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2670880000976859962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761133001908697396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: d91adbdc00000000d1bf8eb3a3e9605a33ed68e243ee1802b393c14e3f3da199
+  m_ShapePath:
+  - {x: -3.7460546, y: 3.2394786, z: 0}
+  - {x: -3.7233539, y: -9.043009, z: 0}
+  - {x: -1.923536, y: -9.354299, z: 0}
+  - {x: -1.1319017, y: -5.1395926, z: 0}
+  - {x: -0.12397872, y: -9.089813, z: 0}
+  - {x: 1.5697619, y: -9.237144, z: 0}
+  - {x: 1.1331108, y: 3.7824552, z: 0}
+  - {x: -0.3474808, y: 5.3152137, z: 0}
+  - {x: 1.0100161, y: 7.034521, z: 0}
+  - {x: 0.42799163, y: 9.727783, z: 0}
+  - {x: -2.8074124, y: 10.431177, z: 0}
+  - {x: -4.6186156, y: 9.321487, z: 0}
+  - {x: -4.6895995, y: 6.472781, z: 0}
+  - {x: -2.9178886, y: 5.091118, z: 0}
+  m_ShapePathHash: 1749241142
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 157548
 --- !u!1 &5484324879298433661
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +821,8 @@ MonoBehaviour:
   frontSprite: {fileID: 5661257173887751870}
   backSprite: {fileID: 528775044950025080}
   attackSprite: {fileID: 5059303829076046382}
+  shadowRight: {fileID: 1881218113403821119}
+  shadowLeft: {fileID: 2670880000976859962}
 --- !u!1 &8185618823105915104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1112,7 @@ Transform:
   - {fileID: 670222097647629713}
   - {fileID: 150481477821575161}
   - {fileID: 8869022079763869996}
+  - {fileID: 1519866115505668874}
   m_Father: {fileID: 6184502496500248644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

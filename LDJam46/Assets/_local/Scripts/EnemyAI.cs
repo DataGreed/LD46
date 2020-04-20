@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using _local.Scripts;
 using MyNamespace;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 namespace firewalk
@@ -41,6 +42,10 @@ namespace firewalk
         public SpriteRenderer frontSprite;
         public SpriteRenderer backSprite;
         public SpriteRenderer attackSprite;
+        public ShadowCaster2D shadowRight;
+        public ShadowCaster2D shadowLeft;
+
+        // private Vector3 shadowOriginalScale;
 
         private Rigidbody2D rb;
 
@@ -66,6 +71,7 @@ namespace firewalk
             //save spawn point, it will be used to return after patrolling
             spawnPoint = transform.position;
             lastPatrolPoint = Vector2.zero;
+            // shadowOriginalScale = shadow.transform.localScale;
         }
 
         private void Update()
@@ -278,12 +284,19 @@ namespace firewalk
                 frontSprite.flipX = false;
                 backSprite.flipX = false;
                 attackSprite.flipX = false;
+                
+                shadowLeft.castsShadows=false;
+                shadowRight.castsShadows=true;
+                
             }
             else if (moveDirection.x < 0) //we don;t update it if it's 0 to face the same direction he walked
             {
                 frontSprite.flipX = true;
                 backSprite.flipX = true;
                 attackSprite.flipX = true;
+
+                shadowLeft.castsShadows=true;
+                shadowRight.castsShadows=false;
             }
 
             if (moveDirection.y > 0)
