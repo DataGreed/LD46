@@ -479,7 +479,7 @@ MonoBehaviour:
   - {x: -9.863974, y: 9.937543, z: 0}
   m_ShapePathHash: -1561500387
   m_Mesh: {fileID: 0}
-  m_InstanceId: 113854
+  m_InstanceId: 117438
 --- !u!1 &5484324879298433661
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionDistanceWithoutTorch: 3.3
-  playerDetectionDistanceWithTorchLit: 5.78
+  playerDetectionDistanceWithTorchLit: 6.37
   walkingSpeed: 1
   attackRange: 1
   attackTimeOut: 1.5
