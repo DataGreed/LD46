@@ -21,6 +21,7 @@
             <e p="LevelController.cs" t="Include" />
             <e p="LivingBeing.cs" t="Include" />
             <e p="MeleeAttack.cs" t="Include" />
+            <e p="PeriodicSoundPlayer.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="SelfDestruct.cs" t="Include" />
