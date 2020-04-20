@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 0}
-  secondsToFadeOut: 45
+  secondsToFadeOut: 40
   defaultIntensity: 1
   fadeOutIntensity: 0.7
-  disableOnFadedOut: 1
-  deactivateGameObjectOnFadeOut: 0
+  disableOnFadedOut: 0
+  deactivateGameObjectOnFadeOut: 1
   OnFadedOut:
     m_PersistentCalls:
       m_Calls:

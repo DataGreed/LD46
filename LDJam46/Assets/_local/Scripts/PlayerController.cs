@@ -226,7 +226,10 @@ namespace MyNamespace
 
         public bool torchIsLit
         {
-            get { return torchLight.activeInHierarchy; }
+            get
+            {
+                return torchLight.activeInHierarchy;
+            }
         }
 
     }
