@@ -234,6 +234,11 @@ namespace MyNamespace
             }
         }
 
+        public void StopMovement()
+        {
+            rb.velocity=Vector2.zero;
+        }
+
     }
 
     public enum PlayerState

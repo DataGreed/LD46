@@ -224,6 +224,8 @@ namespace firewalk
             Vector3 direction = (targetPoint - (Vector2)transform.position).normalized;
             rb.velocity = direction * walkingSpeed;
             //TODO: change to vector 2?
+            
+            characterAnimator.SetBool("moving", true);
         }
         
         void OnDrawGizmosSelected()
@@ -241,6 +243,11 @@ namespace firewalk
             
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, maxPatrolDistance);
+        }
+        
+        public void StopMovement()
+        {
+            rb.velocity=Vector2.zero;
         }
 
     }
