@@ -30,6 +30,7 @@ namespace firewalk
         [Tooltip("Blue circle. Tune this to actual attack range trigger collider or less")]
         public float maxPatrolDistance = 15f;
         public float patrolPointReachAccuracy = 1f;
+        public float stuckTimeOutSeconds = 10f;
         
         
         public EnemyState state { get; private set; }
@@ -42,6 +43,7 @@ namespace firewalk
         private Vector2 moveDirection;
         private float timeBeforeEvasion;
         private float timeBeforeAttack;
+        private float timeBeforeConsideringStuck;
 
         private PlayerController player;
 
@@ -73,6 +75,11 @@ namespace firewalk
             if (timeBeforeAttack > 0)
             {
                 timeBeforeAttack -= Time.deltaTime;
+            }
+            
+            if (timeBeforeConsideringStuck > 0)
+            {
+                timeBeforeConsideringStuck -= Time.deltaTime;
             }
             
             //TODO: stuck timer for situations when stuck in obstacles?
@@ -109,6 +116,12 @@ namespace firewalk
             }
             else
             {
+                if (timeBeforeConsideringStuck < 0)
+                {
+                    //consider stuck, find another patrol point
+                    SelectNewPatrolPoint();
+                }
+                
                 //still moving towards patrol point
                 MoveTowardsPoint(lastPatrolPoint);
                 state = EnemyState.Patrolling;
@@ -200,6 +213,9 @@ namespace firewalk
             lastPatrolPoint = new Vector2(spawnPoint.x + xSign * Random.Range(minPatrolDistance, maxPatrolDistance),
                 spawnPoint.y + ySign*Random.Range(minPatrolDistance, maxPatrolDistance));
             
+            //reset stuck timer
+            timeBeforeConsideringStuck = stuckTimeOutSeconds;
+
         }
         
         public bool ReachedPatrolPoint
