@@ -214,6 +214,7 @@ namespace MyNamespace
             else
             {
                 print("Not enough wood to make a torch");
+                HUDController.Alert("Not enough wood to make a torch");
             }
         }
 

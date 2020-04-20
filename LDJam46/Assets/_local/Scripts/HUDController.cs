@@ -8,6 +8,8 @@ namespace _local.Scripts
     public class HUDController : MonoBehaviour
     {
 
+        public static HUDController instance;
+        
         [Header("Links to scene objects")]
         public LivingBeing playerLivingBeing;
         public BonFireController bonFireController;
@@ -17,16 +19,23 @@ namespace _local.Scripts
         [Header("Links to HUD scene objects")] 
         public GameObject heartsContainer;
         public GameObject itemsContainer;
+        public GameObject alertsContainer;
         public Image bonfireTimer;
         public Image sunriseTimer;
 
         [Header("Links to HUD scene prefabs")] 
         public GameObject heartPrefab;
         public GameObject woodPrefab;
+        public GameObject alertPrefab;
 
         private int previousHealth;
         private int previousWood;
-        
+
+        private void Awake()
+        {
+            instance = this;
+        }
+
         private void Start()
         {
             Redraw();
@@ -80,6 +89,15 @@ namespace _local.Scripts
                 
                 print("HUD: items redrawn");
             }
+        }
+
+        /*
+         * Shows short message alert to the player
+         */
+        public static void Alert(string message)
+        {
+            var alert = Instantiate(instance.alertPrefab, instance.alertsContainer.transform, true);
+            alert.GetComponent<Text>().text = message;
         }
     }
 }

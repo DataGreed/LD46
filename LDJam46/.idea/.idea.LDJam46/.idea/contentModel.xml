@@ -22,6 +22,7 @@
             <e p="MeleeAttack.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
+            <e p="SelfDestruct.cs" t="Include" />
             <e p="SunriseController.cs" t="Include" />
             <e p="TargetFramerate.cs" t="Include" />
           </e>
