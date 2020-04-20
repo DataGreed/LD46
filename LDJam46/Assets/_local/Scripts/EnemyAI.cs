@@ -37,6 +37,10 @@ namespace firewalk
 
         [Header("Links to scene objects")]
         public Animator characterAnimator;
+        
+        public SpriteRenderer frontSprite;
+        public SpriteRenderer backSprite;
+        public SpriteRenderer attackSprite;
 
         private Rigidbody2D rb;
 
@@ -126,8 +130,9 @@ namespace firewalk
                 MoveTowardsPoint(lastPatrolPoint);
                 state = EnemyState.Patrolling;
             }
-            
-            //TODO: refactor to reduce if-else
+
+            UpdateAnimationDirection();
+;            //TODO: refactor to reduce if-else
                 
         }
 
@@ -237,8 +242,8 @@ namespace firewalk
         
         public void MoveTowardsPoint(Vector2 targetPoint)
         {
-            Vector3 direction = (targetPoint - (Vector2)transform.position).normalized;
-            rb.velocity = direction * walkingSpeed;
+            moveDirection = (targetPoint - (Vector2)transform.position).normalized;
+            rb.velocity = moveDirection * walkingSpeed;
             //TODO: change to vector 2?
             
             characterAnimator.SetBool("moving", true);
@@ -264,6 +269,33 @@ namespace firewalk
         public void StopMovement()
         {
             rb.velocity=Vector2.zero;
+        }
+        
+        public void UpdateAnimationDirection()
+        {
+            if (moveDirection.x>0)
+            {
+                frontSprite.flipX = false;
+                backSprite.flipX = false;
+                attackSprite.flipX = false;
+            }
+            else if (moveDirection.x < 0) //we don;t update it if it's 0 to face the same direction he walked
+            {
+                frontSprite.flipX = true;
+                backSprite.flipX = true;
+                attackSprite.flipX = true;
+            }
+
+            if (moveDirection.y > 0)
+            {
+                frontSprite.enabled = false;
+                backSprite.enabled = true;
+            }
+            else if (moveDirection.y < 0)
+            {
+                frontSprite.enabled = true;
+                backSprite.enabled = false;
+            }
         }
 
     }
