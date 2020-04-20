@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 3
-  evasionSpeed: 8
+  evasionSpeed: 5.5
   changeVelocity: 1
   evasionTimeOut: 0.6
   attackTimeOut: 0.3
