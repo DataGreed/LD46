@@ -55,6 +55,7 @@ namespace firewalk
         private float timeBeforeConsideringStuck;
 
         private PlayerController player;
+        private LivingBeing playerLivingBeing;
 
         private Vector2 lastPatrolPoint;
         private Vector2 spawnPoint;
@@ -67,10 +68,12 @@ namespace firewalk
             
             
             player = PlayerController.instance;
+            playerLivingBeing = player.GetComponent<LivingBeing>();
             
             //save spawn point, it will be used to return after patrolling
             spawnPoint = transform.position;
             lastPatrolPoint = Vector2.zero;
+            
             // shadowOriginalScale = shadow.transform.localScale;
         }
 
@@ -97,12 +100,12 @@ namespace firewalk
 
         void FixedUpdate()
         {
-            if (PlayerInAttackRange)
+            if (PlayerInAttackRange && playerLivingBeing.IsAlive())
             {
                 TryToAttack();
                 state = EnemyState.Attacking;
             }
-            else if (SeesPlayer)
+            else if (SeesPlayer  && playerLivingBeing.IsAlive())
             {
                 MoveTowardsPoint(player.transform.position);
                 state = EnemyState.Chasing;
