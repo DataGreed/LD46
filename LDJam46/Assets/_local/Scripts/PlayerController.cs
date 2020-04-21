@@ -189,7 +189,7 @@ namespace MyNamespace
             
             //add explosive force to evasion
             // rb.AddForce(moveDirection.normalized * evasionSpeed, ForceMode2D.Impulse);
-            print(moveDirection.normalized);
+            // print(moveDirection.normalized);
             rb.velocity = moveDirection.normalized * evasionSpeed;
             footPrintsEmitter.enableEmission = false;
         }
