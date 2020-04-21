@@ -27,7 +27,7 @@ namespace _local.Scripts
 
         public void Update()
         {
-            if (Time.frameCount % 4 == 0)
+            if (Time.frameCount % 10 == 0)
             {
                 if (!won)
                 {
