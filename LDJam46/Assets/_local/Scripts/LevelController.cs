@@ -48,7 +48,7 @@ namespace _local.Scripts
 
         public void GameOverDead()
         {
-            if (!lost)
+            if (!lost && !won)
             {
                 lost = true;
                 print("Game Over - you're dead");
@@ -59,7 +59,7 @@ namespace _local.Scripts
         
         public void GameOverFire()
         {
-            if (!lost)
+            if (!lost && !won)
             {
                 lost = true;
                 print("Game Over - bonfire went out");
@@ -87,7 +87,7 @@ namespace _local.Scripts
         
         public void Victory()
         {
-            if (!won)
+            if (!won && !lost)
             {
                 won = true;
                 print("Victory!");
