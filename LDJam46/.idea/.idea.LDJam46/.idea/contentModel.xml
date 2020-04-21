@@ -11,10 +11,12 @@
             <e p="AnimationEventRaiser.cs" t="Include" />
             <e p="BonFireController.cs" t="Include" />
             <e p="DIsmissUI.cs" t="Include" />
+            <e p="DistanceReactor.cs" t="Include" />
             <e p="EnemyAI.cs" t="Include" />
             <e p="Fading2DLight.cs" t="Include" />
             <e p="FlashSprite.cs" t="Include" />
             <e p="FollowCamera.cs" t="Include" />
+            <e p="FrustrumEventRaiser.cs" t="Include" />
             <e p="HitBox.cs" t="Include" />
             <e p="HUDController.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />

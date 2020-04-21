@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2793801075165422980}
   - component: {fileID: 6489189049414877929}
+  - component: {fileID: 6752758026945851481}
   m_Layer: 0
   m_Name: cactoo-02
   m_TagString: Untagged
@@ -81,6 +82,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6752758026945851481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309801261023292993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ac8b168bd14765b55319c62eeffcf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BecameVisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6665899999958231800}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  BecameInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6665899999958231800}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6665899999958231684
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,4 +208,4 @@ MonoBehaviour:
   - {x: -2.759432, y: -2.069269, z: 0}
   m_ShapePathHash: -1866169853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 266914
+  m_InstanceId: 223666
