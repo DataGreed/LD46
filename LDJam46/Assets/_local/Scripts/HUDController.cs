@@ -98,6 +98,7 @@ namespace _local.Scripts
         {
             var alert = Instantiate(instance.alertPrefab, instance.alertsContainer.transform, true);
             alert.GetComponent<Text>().text = message;
+            alert.transform.localScale = new Vector3(1,1,1);
 
             if (alertSeconds != null)
             {
