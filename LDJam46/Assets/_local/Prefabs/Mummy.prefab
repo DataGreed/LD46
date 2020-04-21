@@ -654,7 +654,7 @@ MonoBehaviour:
   - {x: -1.2242717, y: 4.9113665, z: 0}
   m_ShapePathHash: -171126198
   m_Mesh: {fileID: 0}
-  m_InstanceId: 194378
+  m_InstanceId: 265148
 --- !u!1 &4761133001908697396
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   - {x: -2.9178886, y: 5.091118, z: 0}
   m_ShapePathHash: 1749241142
   m_Mesh: {fileID: 0}
-  m_InstanceId: 194386
+  m_InstanceId: 265158
 --- !u!1 &5484324879298433661
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   m_Layer: 9
   m_Name: Mummy
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
