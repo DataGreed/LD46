@@ -68,6 +68,7 @@ namespace _local.Scripts
                 for (int i = 0; i < playerLivingBeing.health; i++)
                 {
                     var heart = Instantiate(heartPrefab, heartsContainer.transform, true);
+                    heart.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
                 }
                 
                 print("HUD: health redrawn");
@@ -84,7 +85,9 @@ namespace _local.Scripts
 
                 for (int i = 0; i < inventory.woodCarrying; i++)
                 {
-                    var heart = Instantiate(woodPrefab, itemsContainer.transform, true);
+                    var wood = Instantiate(woodPrefab, itemsContainer.transform, true);
+                    //fix weird sizing in built versions of game
+                    wood.transform.localScale = new Vector3(1,1,1);
                 }
                 
                 print("HUD: items redrawn");
