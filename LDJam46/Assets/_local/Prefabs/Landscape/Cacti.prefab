@@ -178,7 +178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6665899999958231684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -208,4 +208,4 @@ MonoBehaviour:
   - {x: -2.759432, y: -2.069269, z: 0}
   m_ShapePathHash: -1866169853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 223666
+  m_InstanceId: 296100
