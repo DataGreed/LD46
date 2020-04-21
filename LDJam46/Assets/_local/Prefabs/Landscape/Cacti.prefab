@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 6665899999958231687}
   - component: {fileID: 6665899999958231800}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: Cacti
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -167,4 +167,4 @@ MonoBehaviour:
   - {x: -2.759432, y: -2.069269, z: 0}
   m_ShapePathHash: -1866169853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 237064
+  m_InstanceId: 27720
