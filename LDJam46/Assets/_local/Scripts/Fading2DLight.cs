@@ -18,7 +18,7 @@ namespace _local.Scripts
         
         private float velocity;
         
-        public void Start()
+        public void Awake()
         {
             if (light == null) light = GetComponent<Light2D>();
             Reignite();
